@@ -1,6 +1,6 @@
 import pandas as pd
 import pickle
-from whitenoise import Whitenoise
+from whitenoise import WhiteNoise
 with open('tables.pickle', 'rb') as handle:
     dfs = pickle.load(handle)
 
