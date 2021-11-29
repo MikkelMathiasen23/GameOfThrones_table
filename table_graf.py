@@ -56,7 +56,7 @@ app.layout = html.Div([
             selected_rows=[],
             page_action="native",
             page_current=0,
-            page_size=10,
+            page_size=5,
         ),
         html.Div(id='datatable-interactivity-container')
     ])
@@ -67,6 +67,7 @@ app.layout = html.Div([
               Input('tabs-example-graph', 'value'))
 def render_content(tab):
     s = int(tab.split('-')[1])
+
     return dfs[s].to_dict('records')
 
 
@@ -119,7 +120,10 @@ def update_graphs(rows, derived_virtual_selected_rows):
                 }],
                 "layout": {
                     "xaxis": {
-                        "automargin": True
+                        "automargin":
+                        True,
+                        "showticklabels":
+                        True if column == "Closeness centrality" else False,
                     },
                     "yaxis": {
                         "automargin": True,
@@ -127,9 +131,10 @@ def update_graphs(rows, derived_virtual_selected_rows):
                             "text": column
                         }
                     },
-                    "height": 250,
+                    "height": 250 if column == "Closeness centrality" else 150,
                     "margin": {
                         "t": 10,
+                        "b": 5,
                         "l": 10,
                         "r": 10
                     },
