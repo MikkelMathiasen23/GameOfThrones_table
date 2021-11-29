@@ -1,5 +1,4 @@
 pandas
 dash
-pickle
 gunicorn
 whitenoise
