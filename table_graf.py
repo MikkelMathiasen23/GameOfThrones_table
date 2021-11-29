@@ -1,7 +1,7 @@
 import pandas as pd
 import pickle
 
-with open('_notebooks/tables.pickle', 'rb') as handle:
+with open('tables.pickle', 'rb') as handle:
     dfs = pickle.load(handle)
 
 #hide_input
