@@ -1,6 +1,6 @@
 import pandas as pd
 import pickle
-
+from whitenoise import Whitenoise
 with open('tables.pickle', 'rb') as handle:
     dfs = pickle.load(handle)
 
@@ -144,5 +144,5 @@ def update_graphs(rows, derived_virtual_selected_rows):
     ]
 
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+server = app.server
+server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/')
