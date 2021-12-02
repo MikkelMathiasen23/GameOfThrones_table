@@ -22,7 +22,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 s = 1
 app.layout = html.Div([
-    html.H1('Dash Tabs component demo'),
+    html.H1('Character degree and centrality across seasons'),
     dcc.Tabs(id="tabs-example-graph",
              value='tab-1-example-graph',
              children=[
